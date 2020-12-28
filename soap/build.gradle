@@ -1,0 +1,33 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.github.zhaosunny1'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 29
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+repositories {
+    maven { url "https://oss.sonatype.org/content/repositories/ksoap2-android-releases/" }
+}
+dependencies {
+    //配置 RxJava
+    compileOnly 'io.reactivex.rxjava2:rxjava:2.2.15'
+    compileOnly 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    compileOnly 'com.google.code.gson:gson:2.8.6'
+    compileOnly 'com.google.code.ksoap2-android:ksoap2-android-assembly:3.6.2'
+    compileOnly 'com.squareup.okhttp3:okhttp:4.8.1'
+}
+
+
